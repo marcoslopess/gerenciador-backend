@@ -1,5 +1,8 @@
 {
   "version": 2,
+  "env": {
+    "DATABASE_URL": "mysql://styletime_root:8fkUe0U9_z)$@191.252.195.43:3306/gerenciador_dev"
+  },
   "builds": [
     {
       "src": "nest build && prisma generate",
@@ -8,8 +11,16 @@
   ],
   "routes": [
     {
-      "src": "/.*",
-      "dest": "/dist/main.js"
+      "src": "/financial-record",
+      "dest": "dist/main.js"
+    },
+    {
+      "src": "/financial-record/(.*)",
+      "dest": "dist/main.js"
+    },
+    {
+      "src": "/api",
+      "dest": "dist/main.js"
     }
   ]
 }
