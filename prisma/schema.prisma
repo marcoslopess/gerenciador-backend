@@ -1,0 +1,21 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model FinancialRecord {
+  id           String   @id @default(uuid())
+  value        Float
+  category     String
+  date         DateTime
+  formPayment  String
+  description  String
+  type         String
+  typeFinance  String
+  dateCreate   DateTime @default(now())
+  dateUpdate   DateTime @updatedAt
+}
