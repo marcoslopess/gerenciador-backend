@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "env": {
+    "DATABASE_URL": "mysql://styletime_root:8fkUe0U9_z)$@191.252.195.43:3306/gerenciador_dev"
+  },
+  "builds": [
+    {
+      "src": "src/main.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "public": "dist",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "src/main.ts",
+      "methods": ["GET", "POST", "PUT", "DELETE"]
+    }
+  ]
+}
