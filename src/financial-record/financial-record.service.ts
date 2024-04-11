@@ -12,7 +12,11 @@ export class FinancialRecordService
   }
 
   async findAll(): Promise<FinancialRecord[]> {
-    return this.financialRecord.findMany()
+    return this.financialRecord.findMany({
+      orderBy: {
+        date: 'desc',
+      },
+    })
   }
 
   async findOne(id: string): Promise<FinancialRecord | null> {
