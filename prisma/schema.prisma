@@ -12,10 +12,10 @@ model FinancialRecord {
   value        Float
   category     String
   date         DateTime
-  formPayment  String
+  formPayment  String?
   description  String
-  type         String
+  type         String?
   typeFinance  String
-  dateCreate   DateTime @default(now())
-  dateUpdate   DateTime @updatedAt
+  dateCreate   DateTime  @default(now())
+  dateUpdate   DateTime
 }
